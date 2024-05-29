@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krylon</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a62; /* Dark blue background */
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #1a1a62;
+      width: 100%;
+    }
+
+    header h1 {
+      margin: 0;
+      color: white;
+      font-size: 2.5em;
+    }
+
+    .tabs-container {
+      padding-top: 20px; /* Adjust the top padding as needed */
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .tabs li {
+      margin-right: 20px;
+    }
+
+    .tabs li a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px 5px 0 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      transition: background-color 0.3s ease;
+    }
+
+    .tabs li a:hover {
+      background-color: #333;
+    }
+
+    .frame {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      max-width: 600px;
+      width: 100%;
+      margin-top: 20px;
+      overflow: auto; /* Ensure content does not overflow */
+    }
+
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    button {
+      background-color: #1a1a62; /* Dark blue button */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin: 10px 0; /* Margin for spacing between buttons */
+      width: 80%; /* Optional: Make button width consistent */
+    }
+
+    button:hover {
+      background-color: #1a1a62; /* Lighter blue on hover */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Krylon Closet</h1>
+  </header>
+  <div class="tabs-container">
+    <ul class="tabs">
+      <li><a href="#scripts">Scripts</a></li>
+      <li><a href="#discord">Discord</a></li>
+    </ul>
+  </div>
+  <div class="frame">
+    <div id="scripts" class="content">
+      <h2>Scripts</h2>
+      <p>Get your Executeable Scripts Here!</p>
+      <div class="button-container">
+        <button onclick="window.location.href='https://pastebin.com/raw/SzpLdwSn'">Bus Driver Vietnam 2</button>
+        <button onclick="window.location.href='https://pastebin.com/raw/SzpLdwSn'">Noob Defense</button>
+      </div>
+    </div>
+    <div id="discord" class="content hidden">
+      <h2>Discord</h2>
+      <p>Join Our Discord For More Scripts!</p>
+      <button onclick="window.location.href='https://discord.gg/mvteUxnTy4'">Discord Server</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const tabs = document.querySelectorAll('.tabs li a');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetContent = document.getElementById(targetId);
+          document.querySelectorAll('.content').forEach(content => {
+            content.classList.add('hidden');
+          });
+          targetContent.classList.remove('hidden');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
