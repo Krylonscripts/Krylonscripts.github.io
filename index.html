@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>VORTEX</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Script Thumbnails</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>VortexPTS</h1>
-        <button class="smooth-btn">Button 1</button>
-        <button class="smooth-btn">Button 2</button>
-        <button class="smooth-btn">Button 3</button>
+  <div class="script-frame">
+    <!-- Script Box 1 -->
+    <div class="script-box">
+      <img class="script-thumbnail" src="https://tr.rbxcdn.com/180DAY-299461c0bc1af6da5edffc554f7b8b13/768/432/Image/Webp/noFilter" alt="Script Thumbnail">
+      <div class="label">ANIPHOBIA</div>
+      <button class="copy-btn" onclick="copyScript('Script 1 content here')">Copy</button>
+      <div class="description">AutoProfit. Equip Guns In Vehicles.</div>
     </div>
 
-    <audio autoplay="" src="bigdawgs.mp3"></audio>
+    <!-- Script Box 2 -->
+    <div class="script-box">
+      <img class="script-thumbnail" src="https://tr.rbxcdn.com/180DAY-5a934bc4d676e6749e2ca92cbbce581f/768/432/Image/Webp/noFilter" alt="Script Thumbnail">
+      <div class="label">Script Thumbnail 2</div>
+      <button class="copy-btn" onclick="copyScript('Script 2 content here')">Copy</button>
+      <div class="description">This is a description for the second thumbnail.</div>
+    </div>
+
+    <!-- Script Box 3 -->
+    <div class="script-box">
+      <img class="script-thumbnail" src="https://tr.rbxcdn.com/180DAY-5a934bc4d676e6749e2ca92cbbce581f/768/432/Image/Webp/noFilter" alt="Script Thumbnail">
+      <div class="label">Script Thumbnail 3</div>
+      <button class="copy-btn" onclick="copyScript('Script 3 content here')">Copy</button>
+      <div class="description">This is a description for the third thumbnail.</div>
+    </div>
+  </div>
+
+  <script>
+    function copyScript(scriptContent) {
+      navigator.clipboard.writeText(scriptContent).then(() => {
+        alert("Script copied to clipboard!");
+      }).catch(err => {
+        console.error("Failed to copy script: ", err);
+      });
+    }
+  </script>
 </body>
 </html>
